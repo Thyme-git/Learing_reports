@@ -38,7 +38,7 @@
     python3 train.py
     	(optional) --lr <learning rate(defult 1e-3)>
     	(optional) --epoches <num of epoch(defult 100)>
-    	(optional) --outpath <path model to save model(defult  Step2/model)>
+    	(optional) --outpath <path model to save model(defult  Step2_MNIST/model)>
     	(optional) -p <usepretrained model>
     python3 eval.py
     ```
@@ -51,7 +51,7 @@
     python3 train.py
     	(optional) --lr <learning rate(defult 1e-3)>
     	(optional) --epoches <num of epoch(defult 100)>
-    	(optional) --outpath <path model to save model(defult  Step2/model)>
+    	(optional) --outpath <path model to save model(defult  Step2_CIFAR10/model)>
     	(optional) -p <use pretrained model>
     python3 eval.py
     ```
