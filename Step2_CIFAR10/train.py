@@ -56,7 +56,7 @@ class Config():
     batch_size = 128
     in_feat = 28*28
     num_class = 10
-    lr = 1e-3
+    lr = 1e-5
     n_epoch = 100
 
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
