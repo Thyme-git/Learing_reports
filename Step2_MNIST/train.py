@@ -51,6 +51,8 @@ class Config():
     data_path = str(path) + '/data/'
     model_path = str(path) + '/model/model.pt'
 
+    pretrained = False
+
 class Classifier(nn.Module):
 
     def __init__(self, in_feat, out_feat):
@@ -79,20 +81,23 @@ def main():
         opts, args = getopt.getopt(sys.argv[1:],"h",["lr=","epoches=", "help"])
     except getopt.GetoptError:
         print('[usage]')
-        print('\ttrain.py (optional)--lr <learning rate(defult 1e-3)> (optional)--epoches <num of epoch(defult 100)> (optional)--outpath <path model to save model(defult  Step2/model)>')
+        print('\ttrain.py\n\t(optional) --lr <learning rate(defult 1e-3)>\n\t(optional) --epoches <num of epoch(defult 100)>\n\t(optional) --outpath <path model to save model(defult  Step2/model)>\n\t(optional) -p <use pretrained model>')
         print('\ttrain.py -h (--help) get helps')
         return
     
     for opt, arg in (opts):
         if opt == '-h' or opt == '--help':
             print('[usage]')
-            print('\ttrain.py (optional)--lr <learning rate(defult 1e-3)> (optional)--epoches <num of epoch(defult 100)>(optional)--outpath <path model to save model(defult  Step2/model)')
+            print('\ttrain.py\n\t(optional) --lr <learning rate(defult 1e-3)>\n\t(optional) --epoches <num of epoch(defult 100)>\n\t(optional) --outpath <path model to save model(defult  Step2/model)>\n\t(optional) -p <use pretrained model>')
+            return
         elif opt == '--lr':
             config.lr = int(arg)
         elif opt == '--epoches':
             config.n_epoch = int(arg)
         elif opt == '--outpath':
             config.model_path = arg
+        elif opt == '-p':
+            config.pretrained = True
 
     
     mnist_train, mnist_test = load_data(config.data_path)
