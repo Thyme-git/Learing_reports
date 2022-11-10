@@ -35,10 +35,27 @@
 
     ```
     cd Step2_MNIST
-    python3 train.py (optional)--lr <learning rate(defult 1e-3)> (optional)--epoches <num of epoch(defult 100)> (optional)--outpath <path model to save model(defult  Step2/model)>
+    python3 train.py
+    	(optional) --lr <learning rate(defult 1e-3)>
+    	(optional) --epoches <num of epoch(defult 100)>
+    	(optional) --outpath <path model to save model(defult  Step2/model)>
+    	(optional) -p <usepretrained model>
     python3 eval.py
     ```
-2. [ ] 进阶：使用卷积层搭建网络，实现 CIFAR-10 数据集的分类任务
+2. [X] 进阶：使用卷积层搭建网络，实现 CIFAR-10 数据集的分类任务
+
+    [usage]
+
+    ```
+    cd Step2_CIFAR10
+    python3 train.py
+    	(optional) --lr <learning rate(defult 1e-3)>
+    	(optional) --epoches <num of epoch(defult 100)>
+    	(optional) --outpath <path model to save model(defult  Step2/model)>
+    	(optional) -p <use pretrained model>
+    python3 eval.py
+    ```
+
 
 参考资料：
 
